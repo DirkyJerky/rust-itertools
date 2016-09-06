@@ -216,8 +216,8 @@ pub trait Itertools : Iterator {
     /// ```
     /// use itertools::Itertools;
     ///
-    /// let it = (0..3).interleave(vec![7, 8]);
-    /// itertools::assert_equal(it, vec![0, 7, 1, 8, 2]);
+    /// let it = (0..5).interleave(vec![7, 8]);
+    /// itertools::assert_equal(it, vec![0, 7, 1, 8, 2, 3, 4]);
     /// ```
     fn interleave<J>(self, other: J) -> Interleave<Self, J::IntoIter>
         where J: IntoIterator<Item = Self::Item>,
